@@ -1,0 +1,10 @@
+*.o
+a.out
+*.log
+*.dSYM
+*.save
+*.tmp
+*.swp
+.vscode/
+.idea/
+
