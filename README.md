@@ -1,118 +1,313 @@
-# 🚀 42 C++ Modules — Rank 05
+# 📚 C++ Rank 05 — 42 School
 
-Este é o repositório onde documento meu progresso na trilha de **C++ da 42**, agora avançando para os módulos **05 a 09**, que compõem o novo *rank* da formação.
-A partir daqui, o foco passa a ser **exceções, casts, templates, containers STL e pequenos projetos práticos**.
+Este repositório contém a resolução completa dos módulos **CPP05 ao CPP09** do cursus da 42.
 
-<br>
+O objetivo principal não é apenas entregar os exercícios, mas **construir domínio real em C++ (C++98)**, com foco em:
+* Programação Orientada a Objetos (OOP)
+* Design de classes
+* Templates
+* STL (containers, iterators e algoritmos)
+* Boas práticas exigidas pela 42
 
-## 🧠 Sobre o projeto
+---
 
-Este conjunto de módulos aprofunda conceitos essenciais da linguagem **C++98**, evoluindo da base sólida do Rank04 para temas mais avançados.
-Entre os principais assuntos abordados estão:
+# 🎯 Objetivo do Repositório
 
-* Tratamento de **exceções** e regras de negócio (Bureaucrats & Forms)
-* **Casts** (`static_cast`, `reinterpret_cast`, `dynamic_cast`) e RTTI
-* **Templates** de funções e classes
-* Conceitos fundamentais da **STL** (containers, iteradores e algoritmos)
-* Implementação de estruturas customizadas e frameworks mini-STL
-* Desenvolvimento de pequenos projetos práticos com **map, stack, deque, vector, parsing e performance**
+Este repositório foi estruturado para:
+* Organizar os exercícios por módulo e por exercício
+* Documentar o processo de aprendizado
+* Facilitar revisões futuras (inclusive para exames)
+* Garantir aderência total às regras da 42
+* Simular um ambiente profissional com versionamento disciplinado
 
-<br>
+---
 
-## 📦 Estrutura do Repositório
+# 📁 Estrutura do Projeto
 
-```bash
+```
 cpp_rank05/
-├── cpp05/
-│   ├── ex00/        # Bureaucrat – Exceptions Básicas
-│   ├── ex01/        # Forms – Assinatura e Validações
-│   └── ex02/        # AForm – Polimorfismo e Execução
-│
-├── docs/
-│   ├── subjects/    # Subjects oficiais do Módulo 05 ao 09
-│   │   ├── pt_br.subject_Módulo05.pdf
-│   │   ├── pt_br.subject_Módulo06.pdf
-│   │   ├── pt_br.subject_Módulo07.pdf
-│   │   ├── pt_br.subject_Módulo08.pdf
-│   │   └── pt_br.subject_Módulo09.pdf
-│   ├── notes/       # Notas e resumos para estudo e defesa
-│   └── diagrams/    # Diagramas UML e fluxos
-│
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── workflows/
-│
+├── README.md
 ├── .gitignore
-└── README.md
+├── docs/
+│   ├── subjects/
+│   │   ├── cpp05.pdf
+│   │   ├── cpp06.pdf
+│   │   ├── cpp07.pdf
+│   │   ├── cpp08.pdf
+│   │   └── cpp09.pdf
+│   ├── notes/
+│   │   ├── cpp05/
+│   │   ├── cpp06/
+│   │   ├── cpp07/
+│   │   ├── cpp08/
+│   │   └── cpp09/
+│   └── diagrams/
+├── cpp05/
+│   ├── ex00/
+│   ├── ex01/
+│   ├── ex02/
+│   └── ex03/
+├── cpp06/
+│   ├── ex00/
+│   ├── ex01/
+│   └── ex02/
+├── cpp07/
+│   ├── ex00/
+│   ├── ex01/
+│   └── ex02/
+├── cpp08/
+│   ├── ex00/
+│   ├── ex01/
+│   └── ex02/
+└── cpp09/
+    ├── ex00/
+    ├── ex01/
+    └── ex02/
 ```
 
-<br>
+---
 
-## 📚 Módulos e Conceitos
+# ⚙️ Regras Gerais (Baseadas no Subject Oficial)
 
-| Módulo    | Conceitos Abordados                                                                       | Status         |
-| --------- | ----------------------------------------------------------------------------------------- | -------------- |
-| Module 05 | Exceptions, regras de negócio, validação, formulários e polimorfismo                      | ⏳ Em andamento |
-| Module 06 | Casts, conversão de tipos, ponteiros vs inteiros, RTTI                                    | ⏳ A iniciar    |
-| Module 07 | Templates, funções genéricas, classes template, arrays customizados                       | ⏳ A iniciar    |
-| Module 08 | Containers, iteradores, algoritmos, `std::list`, `std::vector`, `std::stack`, `std::find` | ⏳ A iniciar    |
-| Module 09 | Projetos STL: BitcoinExchange, RPN, PmergeMe (sorting & performance)                      | ⏳ A iniciar    |
+## Compilação
 
-> ⚠️ *O uso da STL passa a ser permitido oficialmente no Módulo 08.
-> Para M05–M07, apenas containers/algoritmos implícitos ou padrão do subject.*
-
-<br>
-
-## 🧪 Compilação
-
-Todos os exercícios devem ser compilados seguindo a norma da 42:
-
+* Compilar com:
 ```bash
-c++ -Wall -Wextra -Werror -std=c++98
+c++ -Wall -Wextra -Werror
 ```
 
-Cada exercício possui seu próprio `Makefile` com as regras padrões:
+* Código deve ser compatível com:
+```bash
+-std=c++98
+```
 
-* `all`
-* `clean`
-* `fclean`
-* `re`
+---
 
-<br>
+## Convenções de Código
 
-## 🧯 Restrições
+* Diretórios nomeados como:
+```
+ex00, ex01, ex02, ...
+```
 
-* ❌ Não usar: `printf`, `malloc`, `free`, `using namespace`, `friend`
-* ❌ Nos módulos 05–07: **não usar containers ou algoritmos da STL**, exceto se explicitamente permitido
-* ✅ `std::exception`, mensagens customizadas, classes aninhadas e exceções próprias são permitidas
-* ✅ A partir do M08: uso completo de containers e algoritmos STL
+* Classes em:
+```
+UpperCamelCase
+```
 
-<br>
+* Arquivos devem seguir o nome da classe:
+```
+ClassName.hpp
+ClassName.cpp
+```
 
-## 🧩 Padrões e Normas
+* Cada saída deve terminar com `\n`
 
-Todos os exercícios seguem as diretrizes oficiais da 42:
+---
 
-* Orthodox Canonical Form (OCF) sempre que solicitado
-* Clareza, modularidade e código autodocumentado
-* Tratamento de exceções elegante e consistente
-* Separação em headers e fontes (`.hpp` e `.cpp`)
-* Encapsulamento forte e foco em boas práticas OOP
-* Estilo de commit usando **Conventional Commits**
-* Organização via **GitHub Projects**, templates e automações
+## Restrições
 
-<br>
+* Proibido usar bibliotecas externas (Boost, C++11+ etc.)
+* Proibido:
+  * `printf`
+  * `malloc/free`
+* `using namespace` (salvo exceção explícita)
+* `friend` (salvo exceção explícita)
 
-## 🧑‍💻 Autora
+---
 
-### Julia Parnahyba
+## Design de Código
 
-Estudante de Engenharia de Software | [42 Rio](https://42.rio)
-LinkedIn: [Julia Parnahyba](https://www.linkedin.com/in/juliaparnahyba/)
-GitHub: [JuliaParnahyba](https://github.com/JuliaParnahyba)
+* Todas as classes (CPP02 → CPP09) devem seguir:
+```
+Orthodox Canonical Form
+```
 
-<br>
+Ou seja, implementar:
+* Default constructor
+* Copy constructor
+* Copy assignment operator
+* Destructor
 
-*“By Odin, by Thor! Use your brain!” – Subject dos módulos*
+---
 
+## Headers
+
+* Devem ser **independentes**
+* Devem conter **include guards**
+* Devem incluir todas as dependências necessárias
+
+---
+
+## Implementação
+
+* Implementação em `.hpp` → proibido
+    * EXCEÇÃO: Templates (CPP07)
+
+---
+
+# 📦 Regras por Módulo
+
+## CPP05 — Exceptions & OOP
+
+* Foco em:
+  * Exceptions
+  * Encadeamento de classes
+  * Responsabilidade de objetos
+* Exercícios são progressivos (dependem uns dos outros)
+
+---
+
+## CPP06 — Casts
+
+* Uso correto de:
+  * static_cast
+  * dynamic_cast
+  * reinterpret_cast
+* Cada exercício valida um tipo específico de conversão
+
+---
+
+## CPP07 — Templates
+
+* Introdução a:
+  * Function templates
+  * Class templates
+
+⚠️ Regra importante:
+
+* Templates devem ser implementados em headers (`.hpp`) ou `.tpp`
+
+---
+
+## CPP08 — STL (Introdução)
+
+* Uso de:
+  * Containers (vector, list, map…)
+  * Algoritmos (`<algorithm>`)
+
+⚠️ Esperado:
+
+* Uso ativo da STL
+* Não usar STL pode impactar a nota negativamente
+
+---
+
+## CPP09 — STL (Avançado)
+
+* Uso obrigatório de containers
+
+⚠️ Regras importantes:
+
+* Cada exercício deve usar um container diferente
+* Containers usados não podem ser reutilizados nos próximos exercícios
+* ex02 exige uso de **dois containers diferentes**
+
+---
+
+# 🌿 Git Workflow
+
+## Branches
+
+Uma branch por exercício:
+```
+feature/cpp05-ex00
+feature/cpp05-ex01
+feature/cpp06-ex00
+feature/cpp07-ex02
+...
+```
+
+Branches auxiliares:
+```
+fix/...
+refactor/...
+docs/...
+chore/...
+```
+
+---
+
+## Commits (Conventional Commits)
+
+Formato:
+```
+type(scope): message
+```
+
+### Tipos:
+
+* feat
+* fix
+* refactor
+* test
+* docs
+* chore
+
+### Exemplos:
+
+```
+feat(cpp05/ex00): implement Bureaucrat class
+fix(cpp05/ex01): handle invalid grade exception
+refactor(cpp06/ex00): simplify scalar conversion logic
+feat(cpp07/ex02): implement Array template with bounds check
+feat(cpp08/ex01): add shortestSpan and longestSpan
+feat(cpp09/ex02): implement merge-insert sort
+```
+
+---
+
+# 🧪 Testes
+
+* Cada exercício deve conter um `main.cpp`
+* `main.cpp` funciona como:
+  * teste manual
+  * validação de comportamento
+  * preparação para defesa
+
+---
+
+# 📖 Documentação
+
+A pasta `docs/` contém:
+* Subjects oficiais
+* Notas de estudo
+* Diagramas
+* Anotações de defesa
+
+---
+
+# 🧠 Filosofia de Aprendizado (42)
+
+Este repositório segue os princípios da 42:
+* Construir raciocínio próprio
+* Evitar atalhos
+* Priorizar entendimento sobre resultado
+* Aprender com erro e repetição
+* Ser capaz de explicar o código em uma avaliação
+
+---
+
+# ⚠️ Observações Importantes
+
+* Código deve ser **legível e compreensível**
+* Avaliadores podem pedir:
+  * modificações rápidas
+  * explicações detalhadas
+* Código que não é compreendido → não é avaliado
+
+---
+
+# 🚀 Próximos Passos
+
+* Implementação progressiva dos módulos
+* Revisões e refatorações após cada exercício
+* Preparação contínua para avaliação entre pares
+
+---
+
+# ✨ Autor
+
+Projeto desenvolvido como parte do cursus da **42 School**.
+
+---
